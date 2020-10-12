@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home page</title>
+	<style type="text/css">
+    .error{
+      margin-top: -17px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <form action="login" method="post" style="margin-left: 500px;margin-top: 150px">
+  	Name:<input type="text" name="name" placeholder="enter name" value="{{user.name}}"><br><br>
+  	 {{#if errors.name}}
+         <p class="error">{{errors.name.msg}}</p>
+	    {{/if}}
+  	Password:<input type="text" name="password" placeholder="enter password" value="{{user.password}}"><br><br>
+  	 {{#if errors.password}}
+         <p class="error">{{errors.password.msg}}</p>
+	    {{/if}}
+  	<input style="background-color: blue;color: yellow" type="submit" value="Login">
+  </form>
+</body>
+</html>

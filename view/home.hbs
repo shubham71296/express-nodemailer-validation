@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home page</title>
+  <style type="text/css">
+    .error{
+      margin-top: -17px;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+	<!-- {{#if errors}}
+       {{#each errors}}
+         <p>{{this.msg}}</p>
+       {{/each}}
+	{{/if}} -->
+	
+  <form action="submit" method="post" style="margin-left: 500px;margin-top: 150px" >
+  	
+  	Name:<input type="text" name="name" placeholder="enter name" value="{{user.name}}"><br><br>
+      {{#if errors.name}}
+         <p class="error">{{errors.name.msg}}</p>
+	    {{/if}}
+  	Salary:<input type="text" name="salary" placeholder="enter salary" value="{{user.salary}}"><br><br>
+  	   {{#if errors.salary}}
+         <p class="error">{{errors.salary.msg}}</p>
+	 {{/if}}
+  	Email:<input type="email" name="email" placeholder="enter email" value="{{user.email}}"><br><br>
+       {{#if errors.email}}
+         <p class="error">{{errors.email.msg}}</p>
+	 {{/if}}
+	     
+  	<input style="background-color: grey;color: yellow" type="submit" value="submit">
+  	
+  </form>
+    
+</body>
+</html>
